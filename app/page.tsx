@@ -1,8 +1,11 @@
-import { Button } from "./_components/ui/button";
+import SignIn from "./login/page";
 
-const Home = async () => {
-
-  return <Button>Hello world</Button>;
+const Home = () => {
+  return (
+    <>
+      <SignIn />
+    </>
+  )
 };
 
 export default Home;
