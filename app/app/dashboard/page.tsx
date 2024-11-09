@@ -29,17 +29,17 @@ const Dashboard = () => {
                 </div>
                 {/* info dashboard */}
                 <div className='grid grid-cols-[62%_35%] justify-between w-full mt-4' >
-                    <div className="">
-                        {/* Saldo */}
+                    <div className="grid gap-6">
+                        {/* Card Saldo */}
                         <div className='bg-[#161716] border-2 border-white border-opacity-[8%] rounded-2xl px-6 py-8 flex justify-between items-end' >
                             {/* valor do saldo */}
                             <div className="flex flex-col justify-between items-start gap-3" >
                                 <div className='flex gap-2 items-center justify-start' >
                                     <div className='bg-[#0F0E11] rounded-lg w-8 h-8 flex items-center justify-center' >
                                         <Image
-                                            src="/saldo.svg"
-                                            width={16}
-                                            height={16}
+                                            src="/Icon-saldo.png"
+                                            width={36}
+                                            height={36}
                                             quality={100}
                                             alt="Icon Saldo"
                                             className=""
@@ -50,12 +50,30 @@ const Dashboard = () => {
                                 <Saldo />
                             </div>
                             {/* button add transctions */}
-                            <div>
-                                <ButtonAddTransctions />
-                            </div>
+                            <ButtonAddTransctions />
                         </div>
                         {/* Investimento */}
-                        <div className='grid grid-cols-3' ></div>
+                        <div className='grid grid-cols-3' >
+                            {/* card 1 */}
+                            <div className='bg-[#161518] rounded-2xl p-6 border-2 grid gap-3 border-white border-opacity-[8%]' >
+                                <div className='flex justify-start items-center gap-1' >
+                                    <Image
+                                        src="/Icon-piggy.png"
+                                        width={36}
+                                        height={36}
+                                        quality={100}
+                                        alt="Icon Piggy"
+                                        className=""
+                                    />
+                                    <h1 className='text-sm font-semibold text-[#71717A]' >
+                                        Investido
+                                    </h1>
+                                </div>
+                                <h1 className='font-bold text-2xl' >R$ 3.500</h1>
+                            </div>
+                            <div></div>
+                            <div></div>
+                        </div>
                         {/* Gráfico */}
                         <div></div>
                     </div>
