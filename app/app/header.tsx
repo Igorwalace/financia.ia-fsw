@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 //pages-components
-import ButtonUser from "./components/com-header/button-user";
-import LinksHeader from "./components/com-header/links-header";
+import ButtonUser from "./components/c_heaeder/button-user";
+import LinksHeader from "./components/c_heaeder/links-header";
 
 //shadcn
 import { Separator } from "@/app/_components/ui/separator";

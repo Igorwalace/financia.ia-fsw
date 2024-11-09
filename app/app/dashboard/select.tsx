@@ -1,5 +1,5 @@
+'use client'
 import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from "@/app/_components/ui/select";
-
 
 const SelectMonth = () => {
 
