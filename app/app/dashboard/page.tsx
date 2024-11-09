@@ -1,7 +1,9 @@
+import Header from "../header";
+
 const Dashboard = () => {
     return (
         <>
-            <h1>Dashboard</h1>
+            <Header />
         </>
     );
 }
