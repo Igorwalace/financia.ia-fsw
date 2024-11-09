@@ -1,7 +1,9 @@
+import Header from "../header";
+
 const Signature = () => {
     return (
         <>
-            <h1>Signature</h1>
+            <Header />
         </>
     );
 }
