@@ -4,6 +4,9 @@ import Image from "next/image";
 import ButtonUser from "./components/com-header/button-user";
 import LinksHeader from "./components/com-header/links-header";
 
+//shadcn
+import { Separator } from "@/app/_components/ui/separator";
+
 const Header = () => {
     return (
         <>
@@ -24,7 +27,7 @@ const Header = () => {
                     <ButtonUser />
                 </div>
             </div>
-            {/* <Separator /> */}
+            <Separator />
         </>
     );
 }
