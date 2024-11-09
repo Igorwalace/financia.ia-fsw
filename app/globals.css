@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {}
+@layer utilities {
+}
 
 @layer base {
   :root {
@@ -69,5 +70,14 @@
   }
   body {
     @apply h-full bg-background text-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
