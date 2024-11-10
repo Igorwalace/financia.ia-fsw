@@ -6,6 +6,7 @@ import Saldo from "./saldo";
 import ButtonAddTransctions from "./button-add-transctions";
 
 const Dashboard = () => {
+    
     return (
         <>
             <Header />
@@ -49,7 +50,7 @@ const Dashboard = () => {
                                 </div>
                                 <Saldo />
                             </div>
-                            {/* button add transctions */}
+                            {/* button add transctions  */}
                             <ButtonAddTransctions />
                         </div>
                         {/* Investimento */}
