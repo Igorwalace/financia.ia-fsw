@@ -1,7 +1,14 @@
 import Image from "next/image";
 import ButtonSignIn from "./button-login";
+import GETSession from "../db/session";
+import { redirect } from "next/navigation";
 
-const SignIn = () => {
+const SignIn = async () => {
+
+    const session = await GETSession()
+    if(session){
+        return redirect('/app/dashboard')
+    }
 
     return (
         <>
@@ -18,6 +25,7 @@ const SignIn = () => {
                     <div className='space-y-3' >
                         <h1 className='font-bold text-4xl' >Bem-vindo</h1>
                         <p className='text-base opacity-60' >A Finance AI é uma plataforma de gestão financeira que utiliza IA para monitorar suas movimentações, e oferecer insights personalizados, facilitando o controle do seu orçamento.</p>
+                    {/* TODO: Implement the sign in button */}
                     </div>
                     <ButtonSignIn />
                 </div>
