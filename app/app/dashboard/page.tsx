@@ -4,9 +4,16 @@ import SelectMonth from "./select";
 import Image from "next/image";
 import Saldo from "./saldo";
 import ButtonAddTransctions from "./button-add-transctions";
+import GETSession from "@/app/db/session";
+import { redirect } from "next/navigation";
 
-const Dashboard = () => {
-    
+const Dashboard = async () => {
+
+    const session = await GETSession()
+    if (!session) {
+        return redirect('/')
+    }
+
     return (
         <>
             <Header />
