@@ -31,11 +31,13 @@ const TableTransctions = async () => {
             {
                 transactions.length === 0
                     ?
-                    <h1>Sem transações</h1>
+                    <div className='flex justify-center p-6' >
+                        <h1 className='font-bold text-3xl text-white text-opacity-[8%]' >Sem transações</h1>
+                    </div>
                     :
                     <>
-                        <div className='m-6 border-[1px] rounded-xl' >
-                            <Table className='' >
+                        <div className='m-6 mt-0 border-[1px] rounded-xl' >
+                            <Table>
                                 <TableHeader className='bg-[#191817]'>
                                     <TableRow>
                                         <TableHead className='text-white' >Name</TableHead>
