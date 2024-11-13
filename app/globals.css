@@ -71,6 +71,9 @@
   body {
     @apply h-full bg-background text-foreground;
   }
+  #buttonTransition{
+    transition: 200ms
+  }
 }
 
 @layer base {
