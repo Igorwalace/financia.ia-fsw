@@ -1,8 +1,16 @@
+import { redirect } from "next/navigation";
 import Header from "../header";
 import CardBasicSignature from "./card-basic-signature";
 import CardProSignature from "./card-pro-signature";
+import GETSession from "@/app/db/session";
 
-const Signature = () => {
+const Signature = async () => {
+
+    const session = await GETSession()
+    if (!session) {
+        return redirect('/')
+    }
+
     return (
         <>
             <Header />

@@ -8,6 +8,11 @@ const ButtonAdquirirPlano = () => {
     const handleCheckoutStripe = async () => {
         const { sessionId } = await CreateCheckoutStripe()
 
+        if (!sessionId) {
+            console.log('SessionId')
+            return
+        }
+
         if (!process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY) {
             throw new Error('Stripe public key not found')
         }
