@@ -4,6 +4,9 @@ import "./globals.css";
 //fonts
 import { Mulish } from 'next/font/google'
 
+//context
+import { AppUtils } from "./context/utils";
+
 export const metadata: Metadata = {
   title: "Financia IA",
   description: "Controle suas finanças de forma simples e eficiente.",
@@ -24,7 +27,10 @@ export default function RootLayout({
       <body
         className={`${mulish.className} dark antialiased`}
       >
-        {children}
+        <AppUtils>
+          {children}
+          {/* <Toaster /> */}
+        </AppUtils>
       </body>
     </html>
   );

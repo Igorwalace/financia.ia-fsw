@@ -1,3 +1,4 @@
+import FormAddTransactions from "../components/c-add-transactions/form";
 import ButtonAddTransctions from "../dashboard/button-add-transctions";
 import Header from "../header";
 import TableTransctions from "./table-transactions";
@@ -11,6 +12,7 @@ const Transactions = () => {
                 <ButtonAddTransctions />
             </div>
             <TableTransctions />
+            <FormAddTransactions />
         </>
     );
 }
