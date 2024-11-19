@@ -56,7 +56,7 @@ export const POST = async (request: Request) => {
           id: authUserId,
         },
         data: {
-          subscriptionPlan: null,
+          subscriptionPlan: 'NOPremium',
         },
       });
       break;
