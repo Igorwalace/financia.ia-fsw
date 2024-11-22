@@ -1,4 +1,4 @@
-import FormAddTransactions from "../components/c-add-transactions/form";
+import FormAddTransactions from "../components/c-add-transactions/form-add-transactions";
 import ButtonAddTransctions from "../dashboard/button-add-transctions";
 import Header from "../header";
 import TableTransctions from "./table-transactions";
@@ -12,7 +12,9 @@ const Transactions = () => {
                 <ButtonAddTransctions />
             </div>
             <TableTransctions />
-            <FormAddTransactions />
+            <div className="flex justify-center items-center">
+                <FormAddTransactions />
+            </div>
         </>
     );
 }

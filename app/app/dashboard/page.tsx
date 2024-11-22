@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 import Cards from "./cards";
 import ColsTransactions from "./cols-transactions";
 import Chart from "./chart";
-import FormAddTransactions from "../components/c-add-transactions/form";
+import FormAddTransactions from "../components/c-add-transactions/form-add-transactions";
 
 const Dashboard = async () => {
 
@@ -78,7 +78,9 @@ const Dashboard = async () => {
                     <ColsTransactions />
                 </div>
             </div>
-            <FormAddTransactions />
+            <div className="flex justify-center items-center">
+                <FormAddTransactions />
+            </div>
         </>
     );
 }

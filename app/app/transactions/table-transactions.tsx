@@ -14,7 +14,7 @@ import { redirect } from "next/navigation";
 import { Badge } from "@/app/_components/ui/badge";
 import { CircleIcon } from "lucide-react";
 import { TransactionType } from "@prisma/client";
-import { TRANSACTION_CATEGORY_LABELS, TRANSACTION_PAYMENT_METHOD_LABELS } from "./transactions-constant";
+import { TRANSACTION_CATEGORY_LABELS, TRANSACTION_PAYMENT_METHOD_LABELS } from "../constant/transactions-constant";
 
 const TableTransctions = async () => {
 
