@@ -1,6 +1,28 @@
 import Image from "next/image";
+import GETSession from "@/app/db/session";
+import { prisma } from "@/app/services/prisma";
 
-const Cards = () => {
+const Cards = async () => {
+
+    const session = await GETSession()
+    const userId = session?.user?.id
+
+    const transactions = await prisma.transaction.findMany({
+        where: {
+            userId
+        }
+    })
+
+    const amount_investment = transactions.reduce((acc, amount) => {
+        return amount.type === 'INVESTMENT' ? Number(amount.amount) + Number(acc) : acc;
+    }, 0);
+    const amount_deposits = transactions.reduce((acc, amount) => {
+        return amount.type === 'DEPOSIT' ? Number(amount.amount) + Number(acc) : acc;
+    }, 0);
+    const amount_expense = transactions.reduce((acc, amount) => {
+        return amount.type === 'EXPENSE' ? Number(amount.amount) + Number(acc) : acc;
+    }, 0);
+
     return (
         <>
             <div className='grid grid-cols-3 gap-6' >
@@ -19,7 +41,14 @@ const Cards = () => {
                             Investido
                         </h1>
                     </div>
-                    <h1 className='font-bold text-2xl' >R$ 3.500</h1>
+                    <h1 className='font-bold text-2xl' >
+                        {
+                            new Intl.NumberFormat("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                            }).format(Number(amount_investment))
+                        }
+                    </h1>
                 </div>
                 {/* card 2 */}
                 <div className='rounded-2xl p-6 border-2 grid gap-3 border-white border-opacity-[8%]' >
@@ -36,7 +65,14 @@ const Cards = () => {
                             Receita
                         </h1>
                     </div>
-                    <h1 className='font-bold text-2xl' >R$ 8.150</h1>
+                    <h1 className='font-bold text-2xl' >
+                        {
+                            new Intl.NumberFormat("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                            }).format(Number(amount_deposits))
+                        }
+                    </h1>
                 </div>
                 {/* card 3 */}
                 <div className='rounded-2xl p-6 border-2 grid gap-3 border-white border-opacity-[8%]' >
@@ -53,7 +89,14 @@ const Cards = () => {
                             Despesas
                         </h1>
                     </div>
-                    <h1 className='font-bold text-2xl' >R$ 2.950</h1>
+                    <h1 className='font-bold text-2xl' >
+                        {
+                            new Intl.NumberFormat("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                            }).format(Number(amount_expense))
+                        }
+                    </h1>
                 </div>
             </div>
         </>
