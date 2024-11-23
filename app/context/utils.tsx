@@ -12,10 +12,11 @@ export function AppUtils({ children }: {
     children: React.ReactNode;
 }) {
     const [openDialogFormAddTransactions, setOpenDialogFormAddTransactions] = useState(false)
+    const [sheetSeeMore, setSheetSeeMore] = useState(false)
 
     return (
         <AppContext.Provider value={{
-            openDialogFormAddTransactions, setOpenDialogFormAddTransactions
+            openDialogFormAddTransactions, setOpenDialogFormAddTransactions, sheetSeeMore, setSheetSeeMore
         }}>
             {children}
         </AppContext.Provider>

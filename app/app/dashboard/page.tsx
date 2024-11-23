@@ -40,8 +40,8 @@ const Dashboard = async () => {
                     </div>
                 </div>
                 {/* info dashboard */}
-                <div className='grid grid-cols-[62%_35%] justify-between w-full mt-4' >
-                    <div className="grid gap-6">
+                <div className='grid grid-cols-[62%_35%] justify-between w-full h-full mt-4' >
+                    <div className="grid gap-6 h-full">
                         {/* Card Saldo */}
                         <div className='bg-[#161716] border-2 border-white border-opacity-[8%] rounded-2xl px-6 py-8 flex justify-between items-end' >
                             {/* valor do saldo */}
