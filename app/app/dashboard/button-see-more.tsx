@@ -20,7 +20,7 @@ const ButtonSeeMore = () => {
         <>
             <Sheet>
                 <SheetTrigger>
-                    <Button onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
+                    <Button asChild onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
                 </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>

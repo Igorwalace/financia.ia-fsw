@@ -23,7 +23,7 @@ const AmountSaldo = async () => {
 
     return (
         <>
-            <h1 className={`text-4xl font-bold ${amount_total < 0 && 'text-danger line-through'}`} >
+            <h1 className={`text-4xl font-bold ${amount_total < 0 && 'text-danger'}`} >
                 {
                     new Intl.NumberFormat("pt-BR", {
                         style: "currency",
