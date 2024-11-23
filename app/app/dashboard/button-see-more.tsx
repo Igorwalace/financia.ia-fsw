@@ -1,35 +1,39 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/app/_components/ui/sheet"
 
 import { Button } from "@/app/_components/ui/button";
 import useAppUtils from "@/app/context/utils";
+import { Transaction } from "@prisma/client";
+import LastTransactions from "./last-transactions";
 
-const ButtonSeeMore = () => {
+interface transactionsProps {
+    transactions: Transaction[]
+}
 
-    const { sheetSeeMore, setSheetSeeMore } = useAppUtils()
+const ButtonSeeMore = ({ transactions }: transactionsProps) => {
+
+    const { setSheetSeeMore } = useAppUtils()
 
     return (
         <>
             <Sheet>
                 <SheetTrigger>
-                    <Button asChild onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
+                    <Button onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
                 </SheetTrigger>
-                <SheetContent>
-                    <SheetHeader>
-                        <SheetTitle>Are you absolutely sure?</SheetTitle>
-                        <SheetDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
-                        </SheetDescription>
-                    </SheetHeader>
+                <SheetContent className=' overflow-y-auto scrollbar-none' >
+                    <div className='flex items-center justify-between mb-5' >
+                        <h1 className='font-bold' >Transações</h1>
+                    </div>
+                    <div className='space-y-6' >
+                        {transactions
+                            .map((transaction) => (
+                                <LastTransactions key={transaction.id} transaction={transaction} />
+                            ))}
+                    </div>
                 </SheetContent>
             </Sheet>
         </>

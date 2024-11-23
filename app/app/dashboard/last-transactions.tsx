@@ -2,7 +2,7 @@ import Image from "next/image";
 import { TRANSACTION_PAYMENT_METHOD_ICONS } from "../constant/transactions-constant";
 import { Transaction } from "@prisma/client";
 
-interface LastTransactions {
+export interface LastTransactions {
     transaction: Transaction
 }
 
