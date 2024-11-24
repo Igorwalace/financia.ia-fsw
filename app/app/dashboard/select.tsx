@@ -3,6 +3,21 @@ import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from "@
 
 const SelectMonth = () => {
 
+    const months = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+    ];
+
     return (
         <>
             <Select>
@@ -10,18 +25,12 @@ const SelectMonth = () => {
                     <SelectValue placeholder='Mês' />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="Janeiro">Janeiro</SelectItem>
-                    <SelectItem value="Fevereiro">Fevereiro</SelectItem>
-                    <SelectItem value="Março">Março</SelectItem>
-                    <SelectItem value="Abril">Abril</SelectItem>
-                    <SelectItem value="Maio">Maio</SelectItem>
-                    <SelectItem value="Junho">Junho</SelectItem>
-                    <SelectItem value="Julho">Julho</SelectItem>
-                    <SelectItem value="Agosto">Agosto</SelectItem>
-                    <SelectItem value="Setembro">Setembro</SelectItem>
-                    <SelectItem value="Outubro">Agosto</SelectItem>
-                    <SelectItem value="Novembro">Novembro</SelectItem>
-                    <SelectItem value="Dezembro">Dezembro</SelectItem>
+                    {
+                        months
+                            .map((month) => (
+                                <SelectItem key={month} value={month}>{month}</SelectItem>
+                            ))
+                    }
                 </SelectContent>
             </Select>
         </>

@@ -13,10 +13,13 @@ export function AppUtils({ children }: {
 }) {
     const [openDialogFormAddTransactions, setOpenDialogFormAddTransactions] = useState(false)
     const [sheetSeeMore, setSheetSeeMore] = useState(false)
+    const [selectMonth, setSelectMonth] = useState<string>('Dezembro')
+    const [eyeOrEyeOff, setEyeOrEyeOff] = useState(true)
 
     return (
         <AppContext.Provider value={{
-            openDialogFormAddTransactions, setOpenDialogFormAddTransactions, sheetSeeMore, setSheetSeeMore
+            openDialogFormAddTransactions, setOpenDialogFormAddTransactions, sheetSeeMore, setSheetSeeMore,
+            selectMonth, setSelectMonth, eyeOrEyeOff, setEyeOrEyeOff
         }}>
             {children}
         </AppContext.Provider>

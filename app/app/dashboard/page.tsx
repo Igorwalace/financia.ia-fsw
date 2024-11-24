@@ -10,6 +10,7 @@ import Cards from "./cards";
 import ColsTransactions from "./cols-transactions";
 import Chart from "./chart";
 import FormAddTransactions from "../components/c-add-transactions/form-add-transactions";
+import HiddenEyes from "./hidden-eyes";
 
 const Dashboard = async () => {
 
@@ -57,7 +58,7 @@ const Dashboard = async () => {
                                             className=""
                                         />
                                     </div>
-                                    <h1 className='text-sm font-semibold text-[#71717A]' >Saldo</h1>
+                                    <HiddenEyes />
                                 </div>
                                 <Saldo />
                             </div>

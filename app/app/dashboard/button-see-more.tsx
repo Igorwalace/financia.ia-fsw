@@ -2,7 +2,6 @@
 import {
     Sheet,
     SheetContent,
-    SheetTrigger,
 } from "@/app/_components/ui/sheet"
 
 import { Button } from "@/app/_components/ui/button";
@@ -16,14 +15,12 @@ interface transactionsProps {
 
 const ButtonSeeMore = ({ transactions }: transactionsProps) => {
 
-    const { setSheetSeeMore } = useAppUtils()
+    const { sheetSeeMore, setSheetSeeMore } = useAppUtils()
 
     return (
         <>
-            <Sheet>
-                <SheetTrigger>
-                    <Button onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
-                </SheetTrigger>
+            <Button onClick={() => setSheetSeeMore(true)} variant='outline' className='rounded-[100px] text-sm' >Ver mais</Button>
+            <Sheet open={sheetSeeMore} onOpenChange={setSheetSeeMore} >
                 <SheetContent className=' overflow-y-auto scrollbar-none' >
                     <div className='flex items-center justify-between mb-5' >
                         <h1 className='font-bold' >Transações</h1>
