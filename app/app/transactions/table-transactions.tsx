@@ -12,9 +12,11 @@ import { ptBR } from "date-fns/locale";
 import GETSession from "@/app/db/session";
 import { redirect } from "next/navigation";
 import { Badge } from "@/app/_components/ui/badge";
-import { CircleIcon } from "lucide-react";
+import { CircleIcon, Pencil } from "lucide-react";
 import { TransactionType } from "@prisma/client";
 import { TRANSACTION_CATEGORY_LABELS, TRANSACTION_PAYMENT_METHOD_LABELS } from "../constant/transactions-constant";
+import { Button } from "@/app/_components/ui/button";
+import ButtonDeleteTransactions from "./button-delete-transactions";
 
 const TableTransctions = async () => {
 
@@ -46,6 +48,7 @@ const TableTransctions = async () => {
                                         <TableHead className='text-white' >Método</TableHead>
                                         <TableHead className='text-white' >Valor</TableHead>
                                         <TableHead className='text-white' >Data</TableHead>
+                                        <TableHead className='text-white' ></TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
@@ -89,13 +92,17 @@ const TableTransctions = async () => {
                                                         locale: ptBR
                                                     })}
                                                 </TableCell>
-                                                <TableCell>
+                                                <TableCell className='pr-0' >
                                                     {
                                                         new Intl.NumberFormat("pt-BR", {
                                                             style: "currency",
                                                             currency: "BRL",
                                                         }).format(Number(transaction.amount))
                                                     }
+                                                </TableCell>
+                                                <TableCell className="flex justify-center items-center gap-3 min-w-[100px] pl-0" >
+                                                    <Button variant='ghost' ><Pencil size={20} /></Button>
+                                                    <ButtonDeleteTransactions id={transaction.id} />
                                                 </TableCell>
                                             </TableRow>
                                         ))
