@@ -42,10 +42,10 @@ const DialogDeleteTransactions = ({ openDialogDeleteTransactions, setOpenDialogT
                     <AlertDialogHeader>
                         <AlertDialogTitle>Você tem certeza?</AlertDialogTitle>
                         <AlertDialogDescription>
-                            Deseja mesma excluir permanentemente essa transação? Você ainda poderá adicionar outras.
+                            Ao confirmar a exclusão, esta transação será removida permanentemente do sistema. Você poderá adicionar novas transações quando desejar.
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <AlertDialogFooter>
+                    <AlertDialogFooter className='grid grid-cols-2' >
                         <AlertDialogCancel disabled={loading} >Voltar</AlertDialogCancel>
                         <Button onClick={handleDeleteTransactions} disabled={loading} >
                             {
@@ -53,7 +53,7 @@ const DialogDeleteTransactions = ({ openDialogDeleteTransactions, setOpenDialogT
                                     ?
                                     <>
                                         <AiOutlineLoading3Quarters size={18} className="animate-spin" />
-                                        Carregando
+                                        Excluindo
                                     </>
                                     :
                                     'Excluir'

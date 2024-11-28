@@ -1,14 +1,71 @@
+'use client'
+import {
+    AlertDialog,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/app/_components/ui/alert-dialog"
 import { Button } from "@/app/_components/ui/button";
-import GETSession from "@/app/db/session";
+import { useState } from "react";
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { signOut } from "next-auth/react"
 
-const ButtonUser = async () => {
+interface NameProps {
+    name: string
+}
 
-    const session = await GETSession()
-    const name = session?.user?.name
+
+const ButtonUser = ({ name }: NameProps) => {
+
+    const [dialogSignOut, setDialogSignOut] = useState(false)
+    const [loading, setLoading] = useState(false)
+
+    const handleSignOut = async () => {
+        try {
+            setLoading(true)
+            await signOut()
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
+            setDialogSignOut(false)
+        }
+    }
 
     return (
         <>
-            <Button variant='outline' >{name}</Button>
+            <Button onClick={() => setDialogSignOut(true)} variant='outline' >{name}</Button>
+            <>
+                <AlertDialog open={dialogSignOut} onOpenChange={setDialogSignOut} >
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Sair</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                Deseja sair da plataforma?
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter className='grid grid-cols-2' >
+                            <AlertDialogCancel disabled={loading} >Voltar</AlertDialogCancel>
+                            <Button onClick={handleSignOut} disabled={loading} >
+                                {
+                                    loading
+                                        ?
+                                        <>
+                                            <AiOutlineLoading3Quarters size={18} className="animate-spin" />
+                                            Saindo
+                                        </>
+                                        :
+                                        'Sair'
+                                }
+                            </Button>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
+
+            </>
         </>
     );
 }

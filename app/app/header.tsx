@@ -6,8 +6,14 @@ import LinksHeader from "./components/c_header/links-header";
 
 //shadcn
 import { Separator } from "@/app/_components/ui/separator";
+import GETSession from "@/app/db/session";
 
-const Header = () => {
+const Header = async () => {
+    
+    const session = await GETSession()
+    if(!session?.user?.name) return
+    const name = session?.user?.name
+
     return (
         <>
             <div className='py-4 px-6 flex justify-between items-center' >
@@ -24,7 +30,7 @@ const Header = () => {
                 </div>
                 {/* user (sempre logado na dashboard) */}
                 <div>
-                    <ButtonUser />
+                    <ButtonUser name={name} />
                 </div>
             </div>
             <Separator />

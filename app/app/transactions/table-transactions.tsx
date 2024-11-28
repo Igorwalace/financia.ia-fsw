@@ -25,6 +25,9 @@ const TableTransctions = async () => {
     const transactions = await prisma.transaction.findMany({
         where: {
             userId: session?.user?.id
+        },
+        orderBy: {
+            date: 'desc',
         }
     });
 
@@ -100,7 +103,7 @@ const TableTransctions = async () => {
                                                         }).format(Number(transaction.amount))
                                                     }
                                                 </TableCell>
-                                                <TableCell className="flex justify-center items-center gap-3 min-w-[100px] pl-0" >
+                                                <TableCell className="flex justify-center items-center gap-1 min-w-[100px] pl-0" >
                                                     <Button variant='ghost' ><Pencil size={20} /></Button>
                                                     <ButtonDeleteTransactions id={transaction.id} />
                                                 </TableCell>
@@ -110,7 +113,7 @@ const TableTransctions = async () => {
                                 </TableBody>
                             </Table>
                         </div>
-                        <h1 className='text-center text-white text-opacity-60' >O histórico completo de suas operações financeiras.</h1>
+                        <h1 className='text-center text-white text-opacity-60 pb-6' >O histórico completo de suas operações financeiras.</h1>
                     </>
             }
         </>
