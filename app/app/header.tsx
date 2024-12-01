@@ -17,7 +17,8 @@ const Header = async () => {
     return (
         <>
             <div className='py-4 px-6 flex justify-between items-center' >
-                {/* logo e links */}
+                {/* logo
+                 e links */}
                 <div className='flex justify-between items-center gap-12' >
                     <Image
                         src="/logo.svg"
