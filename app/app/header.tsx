@@ -22,7 +22,7 @@ const Header = async () => {
             <div className='py-4 px-6 flex justify-between items-center' >
                 {/* logo e links */}
                 <div className='flex justify-between items-center gap-12' >
-                    <div className='relative w-[130px] lg:h-[39px] h-[29px]'>
+                    <div className='relative lg:w-[173px] w-[130px] lg:h-[39px] h-[29px]'>
                         <Image
                             src="/logo.svg"
                             fill
