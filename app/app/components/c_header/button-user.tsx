@@ -53,14 +53,14 @@ const ButtonUser = ({ name, avatar }: NameProps) => {
             </Button>
             <>
                 <AlertDialog open={dialogSignOut} onOpenChange={setDialogSignOut} >
-                    <AlertDialogContent>
+                    <AlertDialogContent className='max-w-[90%] rounded-lg' >
                         <AlertDialogHeader>
-                            <AlertDialogTitle>Sair</AlertDialogTitle>
-                            <AlertDialogDescription>
+                            <AlertDialogTitle className='text-left' >Sair</AlertDialogTitle>
+                            <AlertDialogDescription className='text-left'>
                                 Deseja sair da plataforma?
                             </AlertDialogDescription>
                         </AlertDialogHeader>
-                        <AlertDialogFooter className='grid grid-cols-2' >
+                        <AlertDialogFooter className='grid lg:grid-cols-2 grid-cols-1 gap-2' >
                             <AlertDialogCancel disabled={loading} >Voltar</AlertDialogCancel>
                             <Button onClick={handleSignOut} disabled={loading} >
                                 {

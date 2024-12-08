@@ -13,9 +13,10 @@ import {
 import { Separator } from "@/app/_components/ui/separator";
 import AvatarName from "./avatar-name";
 import SignOutSheet from "./signOut-sheet";
+import LinksMenuMobile from "./links-menu-mobile";
 
 const MenuHeader = () => {
-    
+
     return (
         <div className='lg:hidden block px-2 py-1 m-0' >
             {/* <Buttonvariant='outline' >
@@ -26,11 +27,11 @@ const MenuHeader = () => {
                 </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>Menu</SheetTitle>
+                        <SheetTitle className='text-left' >Menu</SheetTitle>
 
                         <AvatarName />
-
                         <Separator className='my-3' />
+                        <LinksMenuMobile />
                         <SheetClose className='w-full' >
                             <SignOutSheet />
                         </SheetClose>
