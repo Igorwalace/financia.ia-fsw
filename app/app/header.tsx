@@ -12,7 +12,9 @@ const Header = async () => {
     
     const session = await GETSession()
     if(!session?.user?.name) return
+    if(!session?.user?.image) return
     const name = session?.user?.name
+    const avatar = session?.user?.image
 
     return (
         <>
@@ -30,7 +32,7 @@ const Header = async () => {
                 </div>
                 {/* user (sempre logado na dashboard) */}
                 <div>
-                    <ButtonUser name={name} />
+                    <ButtonUser name={name} avatar={avatar} />
                 </div>
             </div>
             <Separator />

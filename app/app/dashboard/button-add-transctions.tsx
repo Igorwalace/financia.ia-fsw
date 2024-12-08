@@ -7,10 +7,12 @@ import { ArrowDownUp } from "lucide-react";
 const ButtonAddTransctions = () => {
 
     const { setOpenDialogFormAddTransactions } = useAppUtils()
-    
+
     return (
         <>
-            <Button variant='default' className='font-bold rounded-[100px]' onClick={() => setOpenDialogFormAddTransactions(true)} >
+            <Button variant='default' className='font-bold rounded-[100px]' onClick={() => {
+                setOpenDialogFormAddTransactions(true)
+            }} >
                 Adicionar Transação
                 <ArrowDownUp />
             </Button>
