@@ -13,6 +13,7 @@ import { useState } from "react";
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { signOut } from "next-auth/react"
 import Image from "next/image";
+import useAppUtils from "@/app/context/utils";
 
 interface NameProps {
     name: string
@@ -21,7 +22,7 @@ interface NameProps {
 
 const ButtonUser = ({ name, avatar }: NameProps) => {
 
-    const [dialogSignOut, setDialogSignOut] = useState(false)
+    const { dialogSignOut, setDialogSignOut } = useAppUtils()
     const [loading, setLoading] = useState(false)
 
     const handleSignOut = async () => {
