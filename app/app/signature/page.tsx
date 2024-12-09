@@ -15,8 +15,8 @@ const Signature = async () => {
         <>
             <Header />
             <div className='p-6 space-y-6' >
-                <h1 className='text-2xl font-bold' >Assinatura</h1>
-                <div className='grid grid-cols-3 gap-6' >
+                <h1 className='lg:text-2xl text-lg font-bold' >Assinatura</h1>
+                <div className='grid lg:grid-cols-3 grid-cols-1 gap-6' >
                     <CardBasicSignature />
                     <CardProSignature />
                 </div>
