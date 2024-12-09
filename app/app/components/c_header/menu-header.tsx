@@ -30,8 +30,13 @@ const MenuHeader = () => {
                         <SheetTitle className='text-left' >Menu</SheetTitle>
 
                         <AvatarName />
-                        <Separator className='my-3' />
+                        <div className="py-2">
+                            <Separator className='my-3' />
+                        </div>
                         <LinksMenuMobile />
+                        <div className="py-2">
+                            <Separator className='mt-3' />
+                        </div>
                         <SheetClose className='w-full' >
                             <SignOutSheet />
                         </SheetClose>
